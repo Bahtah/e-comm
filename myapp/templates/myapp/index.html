@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+<h1>Index page</h1>
+
+{% for p in products %}
+<a href="{% url 'myapp:detail_prod' p.id %}">
+    <p>{{ p.title }}</p>
+    <p>{{ p.price }}</p>
+    <p>{{ p.description }}</p>
+</a>
+<hr>
+
+{% endfor %}
+
+</body>
+</html>
