@@ -1,14 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-</head>
-<body class="bg-sky-500">
-<h1>Index page</h1>
+{% extends 'base.html' %}
 
+{% block content %}
 {% for p in products %}
 <a href="{% url 'myapp:detail_prod' p.id %}">
     <p>{{ p.title }}</p>
@@ -16,8 +8,5 @@
     <p>{{ p.description }}</p>
 </a>
 <hr>
-
 {% endfor %}
-
-</body>
-</html>
+{% endblock %}

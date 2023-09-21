@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6x1 mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+
+                <div>
+                    <a href="{% url 'myapp:index' %}" class="flex items-center px-2 py-4">
+                        <img class="h-8 w-8" src="{% static 'myapp/images/cutlery.png' %}" alt="logo">
+                        <span class="text-red-500 font-semibold text-xl">Pro shop</span>
+                    </a>
+                </div>
+                <div class="items-center flex space-x-1">
+                    <a href="{% url 'myapp:index' %}" class="text-red-500 font-semibold py-4 px-2 border-b-2 border-green-500">Home</a>
+                    <a href="#" class="text-red-500 font-semibold py-4 px-2">About</a>
+                    <a href="#" class="text-red-500 font-semibold py-4 px-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
